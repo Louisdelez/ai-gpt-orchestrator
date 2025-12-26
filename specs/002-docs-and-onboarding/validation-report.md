@@ -151,3 +151,64 @@ La documentation est complete, coherente, et prete pour publication sur GitHub. 
 2. Tester le rendu Mermaid sur GitHub
 3. Faire lire le README a une personne externe (test US1)
 4. Suivre le guide d'installation depuis zero (test US2)
+
+---
+
+## Correction du Contrat de Sortie (2025-12-26)
+
+### Objectif
+
+Garantir que tout contenu copiable dans les prompts GPT soit encapsule dans un bloc de code Markdown fenced (triple backticks), activant le bouton "Copier le code" dans ChatGPT.
+
+### Fichiers Modifies
+
+| # | Fichier | Blocs fenced | Status |
+|---|---------|--------------|--------|
+| 1 | `prompts/01-orchestrateur/esteban-durand.md` | 5 | OK |
+| 2 | `prompts/02-product/benjamin-caron.md` | 2 | OK |
+| 3 | `prompts/03-tech/quentin-delacroix.md` | 3 | OK |
+| 4 | `prompts/03-tech/thomas-laurent.md` | 3 | OK |
+| 5 | `prompts/03-tech/ulysse-fabre.md` | 3 | OK |
+| 6 | `prompts/03-tech/yassine-el-amrani.md` | 3 | OK |
+| 7 | `prompts/04-quality/adrien-roche.md` | 3 | OK |
+| 8 | `prompts/04-quality/rachid-benyahia.md` | 3 | OK |
+| 9 | `prompts/04-quality/sarah-klein.md` | 3 | OK |
+| 10 | `prompts/05-design/clara-morel.md` | 3 | OK |
+| 11 | `prompts/05-design/lucas-perrin.md` | 3 | OK |
+| 12 | `prompts/05-design/maya-renaud.md` | 3 | OK |
+| 13 | `prompts/05-design/nassim-haddad.md` | 3 | OK |
+| 14 | `prompts/05-design/elodie-martin.md` | 3 | OK |
+| 15 | `prompts/06-data/romain-girard.md` | 3 | OK |
+
+**Total:** 15 fichiers modifies, 46 blocs fenced, 112 delimiteurs
+
+### Validation Automatique
+
+```text
+Occurrences de delimiteurs "=== ... ===": 112
+Fichiers contenant des delimiteurs: 15/15
+Blocs hors fenced code block: 0
+```
+
+### Types de delimiteurs
+
+- `=== CLAUDE CODE ===` ... `=== END ===`
+- `=== GPT DELEGATION ===` ... `=== END ===`
+- `=== IA EXTERNE ===` ... `=== END ===`
+- `=== PROJECT SNAPSHOT ===` ... `=== END ===`
+- `=== MANUAL TEST REPORT ===` ... `=== END ===`
+- `=== CLAUDE CODE REPORT ===` ... `=== END ===`
+
+### Modifications Apportees
+
+1. **Section "Contrat de Sortie Obligatoire"** ajoutee/mise a jour dans chaque prompt
+2. **Section "Formats de Sortie"** avec templates encapsules dans blocs fenced
+3. **Standardisation** de la cloture: `=== END ===`
+4. **Type de bloc**: `text` pour tous les fenced blocks
+
+### Regle Fondamentale
+
+> **Copyable = Code Block**
+>
+> Tout contenu destine a etre copie, transmis ou execute doit etre
+> dans un bloc de code Markdown fenced (triple backticks).

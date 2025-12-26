@@ -266,3 +266,21 @@ Etant donne que toute la documentation doit etre coherente:
 - Limite de 500 mots pour le README
 - Aucune mention de "Cloud Code" autorisee
 - Langue: francais uniquement
+
+---
+
+## Phase 9: Correction Contrat de Sortie (Post-Implementation)
+
+**Purpose**: Garantir que les outputs GPT activent le bouton "Copier le code" dans ChatGPT
+
+**Contexte**: Les blocs `=== GPT DELEGATION ===` n'activaient pas le bouton "Copier" car ils n'etaient pas dans des fenced code blocks Markdown.
+
+- [x] T058 Ajouter section "Contrat de Sortie Obligatoire" dans les 15 prompts
+- [x] T059 Encapsuler tous les delimiteurs `=== ... ===` dans des blocs ```text
+- [x] T060 Standardiser la cloture en `=== END ===`
+- [x] T061 Valider: 0 occurrence de blocs hors fenced code blocks
+- [x] T062 Mettre a jour `validation-report.md` avec section correction
+
+**Checkpoint**: Tous les outputs GPT sont copiables en un clic
+
+**Fichiers modifies**: 15 prompts dans `prompts/**/*.md`
